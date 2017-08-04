@@ -4,7 +4,15 @@ Routes are declared here:
 
 sonitus/app/routes.js
 
+### Theme Guide
+
+* To come
+
 ### Short-term Goals
+
+#### Global
+
+* add theme screengrab and Hex colors guide for themes. Place above.
 
 #### Book
 

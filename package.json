@@ -2,7 +2,7 @@
   "name": "sonitus",
   "productName": "Sonitus",
   "version": "0.0.1",
-  "description": "Dev environemnt for project sonitus. Project sonitus creates an environemnt for learning, communicating, and practicing on audio and music.",
+  "description": "Dev environment for project sonitus. Project sonitus creates an environemnt for learning, communicating, and practicing on audio and music.",
   "scripts": {
     "build": "concurrently \"npm run build-main\" \"npm run build-renderer\"",
     "build-dll": "cross-env NODE_ENV=development node --trace-warnings -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.renderer.dev.dll.js --colors",
@@ -72,10 +72,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:ricardomasters/sonitus.git"
+    "private-repo": "git+ssh://git@github.com:ricardomasters/sonitus.git"
   },
   "author": {
-    "name": "Ricardo Gutierrez",
+      "name": "Ricardo Gutierrez",
+      "license": "LicenseRef-LICENSE",
+      "private": true
   },
   "jest": {
     "moduleNameMapper": {

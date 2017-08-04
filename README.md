@@ -19,7 +19,7 @@
 
 ## Notes
 
-For ongoing notes and strategies see ![NOTES.md] (NOTES.md)
+For ongoing notes and strategies see [NOTES](NOTES.md)
 
 
 ## Screenshot

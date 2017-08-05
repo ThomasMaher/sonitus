@@ -19,8 +19,8 @@
 
 ## Notes
 
-For ongoing notes and strategies see [NOTES](NOTES.md)
-
+For goals and strategies see [Trello: Goals](https://trello.com/b/ebKaOKCe)
+For sticky notes: [Trello: Sticky Notes](https://trello.com/b/aW0p0aU8)
 
 ## Screenshot
 

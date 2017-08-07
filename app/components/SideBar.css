@@ -1,0 +1,23 @@
+.container {
+  position: absolute;
+  height: 100%;
+  width: 225px;
+  background-color: black;
+}
+
+.container * {
+  padding-left: 35px;
+}
+
+.container h2 {
+  color: #C55D29;
+  font-size: 29px;
+}
+
+.container li {
+  border-top: solid rgba(255, 255, 255, 0.31) 1px;
+  border-bottom: solid rgba(255, 255, 255, 0.31) 1px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+}

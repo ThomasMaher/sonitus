@@ -5,13 +5,14 @@
   background-color: black;
 }
 
-.container * {
-  padding-left: 35px;
+.container ul {
+  padding-left: 0px;
 }
 
 .container h2 {
   color: #C55D29;
   font-size: 29px;
+  padding-left: 35px
 }
 
 .container li {
@@ -19,5 +20,10 @@
   border-bottom: solid rgba(255, 255, 255, 0.31) 1px;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-left: 35px;
   font-size: 16px;
+}
+
+.container a {
+  opacity: initial;
 }

@@ -29,3 +29,23 @@
 .container a {
   opacity: initial;
 }
+
+.hidden {
+  height: 0px;
+  padding: 0px;
+  border: none;
+  font-size: 0px;
+  transition: all .5s;
+  text-align: center;
+}
+
+.viewable {
+  border-bottom: solid rgba(255, 255, 255, 0.31) 1px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 35px;
+  font-size: 14px;
+  height: 10px;
+  transition: all .5s;
+  text-align: center;
+}

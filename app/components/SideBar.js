@@ -24,10 +24,10 @@ export default class SideBar extends Component {
         <ul>
           <li><Link to="/freecontent">Free Content</Link></li>
           <div className={this.state.viewLinks}>
-            <Link to='/'>Mixing 1.1</Link>
+            <Link to='/mixing/1.1'>Mixing 1.1</Link>
           </div>
           <div className={this.state.viewLinks}>
-            <Link to='/'>Mixing 1.2</Link>
+            <Link to='/mixing/1.2'>Mixing 1.2</Link>
           </div>
           <li onClick={e => this.dropDown(e)}>Mixing</li>
         </ul>

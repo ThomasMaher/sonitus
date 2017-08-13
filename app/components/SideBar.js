@@ -7,7 +7,7 @@ export default class SideBar extends Component {
     super(props)
     this.dropDown = this.dropDown.bind(this);
     this.state = {
-      viewLinks: styles.drop
+      viewLinks: styles.up
     }
   }
 

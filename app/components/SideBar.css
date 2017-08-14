@@ -18,8 +18,6 @@
 }
 
 .container li {
-  border-top: solid rgba(255, 255, 255, 0.31) 1px;
-  border-bottom: solid rgba(255, 255, 255, 0.31) 1px;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 35px;
@@ -42,7 +40,6 @@
   width: 225px;
 }
 .mixes div {
-  border-bottom: solid rgba(255, 255, 255, 0.31) 1px;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 35px;

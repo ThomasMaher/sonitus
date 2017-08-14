@@ -29,32 +29,31 @@
 .container ul li:last-child {
   border: none;
   height: 30px;
+  width: 190px;
+  position: absolute;
 }
 
 .container a {
   opacity: initial;
 }
 
-.mixes {
-  position: absolute;
-  width: 225px;
-}
-.mixes div {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 35px;
+.mixesUp {
+  padding-top: 0px;
   font-size: 14px;
-  height: 10px;
-  transition: all .5s;
-  text-align: center;
-  position: relative;
+  width: 200px;
+  text-align: right;
+  position: absolute;
+  transition: all 1s;
+}
+.mixesDrop {
+  padding-top: 50px;
+  font-size: 14px;
+  width: 200px;
+  text-align: right;
+  position: absolute;
+  transition: all 1s;
 }
 
-.up {
-  transition: all .5s;
-}
-
-.drop {
-  margin-top: 60px;
-  transition: all .5s;
+.mixesDrop div {
+  padding-bottom: 10px;
 }

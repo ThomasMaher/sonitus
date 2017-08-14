@@ -7,14 +7,14 @@ export default class SideBar extends Component {
     super(props)
     this.dropDown = this.dropDown.bind(this);
     this.state = {
-      viewLinks: styles.up
+      mixes: styles.mixesUp
     }
   }
 
   dropDown(e) {
     e.preventDefault();
-    let viewLinks = (this.state.viewLinks === styles.up) ? styles.drop : styles.up;
-    this.setState({viewLinks: viewLinks})
+    let mixes = (this.state.mixes === styles.mixesUp) ? styles.mixesDrop : styles.mixesUp;
+    this.setState({mixes: mixes})
   }
 
   render() {
@@ -23,7 +23,7 @@ export default class SideBar extends Component {
         <h2><Link to='/'>Book</Link></h2>
         <ul>
           <li><Link to="/freecontent">Free Content</Link></li>
-          <div className={styles.mixes}>
+          <div className={this.state.mixes}>
             <div>
               <Link to='/mixing/1.1'>Mixing 1.1</Link>
             </div>
@@ -31,9 +31,7 @@ export default class SideBar extends Component {
               <Link to='/mixing/1.2'>Mixing 1.2</Link>
             </div>
           </div>
-          <li className={this.state.viewLinks}
-            onClick={e => this.dropDown(e)}>Mixing</li>
-          <li> </li>
+          <li onClick={e => this.dropDown(e)}>Mixing</li>
         </ul>
       </section>
     )

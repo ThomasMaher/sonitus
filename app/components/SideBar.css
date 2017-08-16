@@ -43,7 +43,7 @@
   width: 200px;
   text-align: right;
   position: absolute;
-  transition: all 1s;
+  transition: all .7s;
 }
 .mixesDrop {
   padding-top: 50px;
@@ -51,9 +51,12 @@
   width: 200px;
   text-align: right;
   position: absolute;
-  transition: all 1s;
+  transition: all .7s;
 }
 
 .mixesDrop div {
+  padding-bottom: 10px;
+}
+.mixesUp div {
   padding-bottom: 10px;
 }

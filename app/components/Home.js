@@ -1,19 +1,19 @@
 // @flow
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Home.css';
+import styles from './Content.css';
 import SideBar from './SideBar.js';
 
 export default class Home extends Component {
   render() {
     return (
-      <div>
+      <section className={styles.container}>
         <SideBar />
-        <div className={styles.container} data-tid="container">
+        <section className={styles.home} data-tid="container">
           <h2>Home</h2>
           <Link to="/counter">to Counter</Link>
-        </div>
-      </div>
+        </section>
+      </section>
     );
   }
 }

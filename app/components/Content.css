@@ -21,3 +21,19 @@
 .mixing p {
   font-size: 20px;
 }
+
+.home {
+  position: relative;
+  left: 15px;
+  top: 30%;
+  width: 755px;
+  overflow: scroll;
+}
+
+.home h2 {
+  font-size: 5rem;
+}
+
+.home a {
+  font-size: 1.4rem;
+}

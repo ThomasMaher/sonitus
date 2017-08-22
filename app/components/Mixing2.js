@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './Mixing.css';
+import styles from './Content.css';
 import SideBar from './SideBar.js';
 
 export default class Mixing1 extends Component {

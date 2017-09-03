@@ -28,9 +28,14 @@
 
 .container ul li:last-child {
   border: none;
-  height: 30px;
+  height: 35px;
   width: 190px;
+  padding: 0;
+  padding-top: 9px;
+  margin-left: 35px;
+  margin-top: 2px;
   position: absolute;
+  cursor: pointer;
 }
 
 .container a {
@@ -52,6 +57,10 @@
   text-align: right;
   position: absolute;
   transition: all .3s;
+}
+
+.dropdown-button {
+  cursor: pointer;
 }
 
 .mixesDrop div {

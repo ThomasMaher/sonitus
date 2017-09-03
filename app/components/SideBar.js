@@ -31,7 +31,8 @@ export default class SideBar extends Component {
               <Link to='/mixing/1.2'>Mixing 1.2</Link>
             </div>
           </div>
-          <li onClick={e => this.dropDown(e)}>Mixing</li>
+          <li onClick={e => this.dropDown(e)}
+            className="dropdown-button">Mixing</li>
         </ul>
       </section>
     )

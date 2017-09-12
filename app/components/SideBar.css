@@ -1,6 +1,7 @@
 .container {
   height: 100%;
-  width: 225px;
+  min-width: 162px;
+  max-width: 162px;
   background-color: black;
   overflow: scroll;
 }
@@ -29,7 +30,7 @@
 .container ul li:last-child {
   border: none;
   height: 35px;
-  width: 190px;
+  width: 125px;
   padding: 0;
   padding-top: 9px;
   margin-left: 35px;
@@ -45,7 +46,7 @@
 .mixesUp {
   padding-top: 0px;
   font-size: 14px;
-  width: 200px;
+  width: 150px;
   text-align: right;
   position: absolute;
   transition: all .3s;
@@ -53,7 +54,7 @@
 .mixesDrop {
   padding-top: 50px;
   font-size: 14px;
-  width: 200px;
+  width: 150px;
   text-align: right;
   position: absolute;
   transition: all .3s;

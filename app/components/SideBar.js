@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styles from './SideBar.css';
 import { Link } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory'
+
 
 export default class SideBar extends Component {
   constructor(props) {
@@ -9,6 +11,7 @@ export default class SideBar extends Component {
     this.state = {
       mixes: styles.mixesUp
     }
+    let history = createHistory();
   }
 
   dropDown(e) {

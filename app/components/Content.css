@@ -8,18 +8,21 @@
 
 .mixing {
   position: relative;
-  left: 15px;
-  width: 755px;
+  width: 812px;
   overflow: scroll;
+  background-color: white;
 }
 
 .mixing h1 {
   font-size: 36px;
   text-align: center;
+  color: black;
 }
 
 .mixing p {
   font-size: 20px;
+  padding-left: 14px;
+  color: black;
 }
 
 .home {

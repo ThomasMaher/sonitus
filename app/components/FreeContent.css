@@ -8,16 +8,19 @@
 
 .freeContent {
   position: relative;
-  left: 15px;
-  width: 755px;
+  width: 812px;
   overflow: scroll;
+  background-color: white;
 }
 
 .freeContent h1 {
   font-size: 36px;
+  color: black;
   text-align: center;
 }
 
 .freeContent p {
   font-size: 20px;
+  color: black;
+  padding-left: 14px;
 }

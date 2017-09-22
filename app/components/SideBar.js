@@ -23,15 +23,22 @@ export default class SideBar extends Component {
   render() {
     return (
       <section className={styles.container}>
-        <h2><Link to='/'>Book</Link></h2>
+        <h2 className={styles.book}><Link to='/'>Book</Link></h2>
         <ul>
           <li><Link to="/freecontent">Free Content</Link></li>
+
           <div className={this.state.mixes}>
             <div>
-              <Link to='/mixing/1.1'>Mixing 1.1</Link>
+              <Link to='/mixing/1/intro'>Mixing 1 intro</Link>
             </div>
             <div>
-              <Link to='/mixing/1.2'>Mixing 1.2</Link>
+              <Link to='/mixing/1/0'>Mixing 1.0</Link>
+            </div>
+            <div>
+              <Link to='/mixing/1/1'>Mixing 1.1</Link>
+            </div>
+            <div>
+              <Link to='/mixing/1/2'>Mixing 1.2</Link>
             </div>
           </div>
           <li onClick={e => this.dropDown(e)}

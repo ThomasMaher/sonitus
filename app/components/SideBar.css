@@ -8,7 +8,11 @@
 
 .container ul {
   padding-left: 0px;
-  margin-top: 8px;
+  margin: 0;
+}
+
+.book {
+  /*background-color: black;*/
 }
 
 .container h2 a {
@@ -25,6 +29,7 @@
   font-size: 15px;
   background-color: black;
   position: relative;
+  z-index: 2;
 }
 
 .container ul li:last-child {
@@ -33,8 +38,7 @@
   width: 125px;
   padding: 0;
   padding-top: 9px;
-  margin-left: 35px;
-  margin-top: 2px;
+  padding-left: 35px;
   position: absolute;
   cursor: pointer;
 }
@@ -46,18 +50,22 @@
 .mixesUp {
   padding-top: 0px;
   font-size: 14px;
-  width: 150px;
+  width: 121px;
+  padding-left: 41px;
   text-align: right;
   position: absolute;
+  top: 42px;
   transition: all .3s;
 }
 .mixesDrop {
-  padding-top: 50px;
+  padding-top: 80px;
   font-size: 14px;
-  width: 150px;
+  width: 121px;
+  padding-left: 41px;
   text-align: right;
   position: absolute;
-  transition: all .3s;
+  top: 42px;
+  transition: all .1s;
 }
 
 .dropdown-button {
@@ -66,7 +74,14 @@
 
 .mixesDrop div {
   padding-bottom: 10px;
+  text-align: left;
+  padding-left: 12px;
+  transition: all .3s;
 }
 .mixesUp div {
   padding-bottom: 10px;
+  text-align: left;
+  padding-left: 12px;
+  position: absolute;
+  transition: all 2s;
 }

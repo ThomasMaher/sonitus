@@ -19,8 +19,8 @@ export default class Mixing1 extends Component {
           for certain - no matter how fancy you get or how many techniques you
           learn, the foundations are what you will spend the most time using. Fully understanding the basics is crucial to developing your ear, as well as, eventually, your own technique and style. This includes proper recording processes which are sometimes overlooked as a part of successful mixing.</p>
 
-          <p>UNDERSTAND THIS!! Mixing is an individual art and everyone will eventually find their own path .
-          Congratulations on embarking on your journey!
+        <p  className={styles.bIt}>UNDERSTAND THIS!! Mixing is an individual art and everyone will eventually find their own path.
+          <p className={styles.alignCenter}>Congratulations on embarking on your journey!</p>
           </p>
 
         </section>

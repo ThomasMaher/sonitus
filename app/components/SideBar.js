@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import styles from './SideBar.css';
 import { Link } from 'react-router-dom';
-import createHistory from 'history/createBrowserHistory'
-
 
 export default class SideBar extends Component {
   constructor(props) {
@@ -11,7 +9,6 @@ export default class SideBar extends Component {
     this.state = {
       mixes: styles.mixesUp
     }
-    let history = createHistory();
   }
 
   dropDown(e) {
@@ -28,23 +25,34 @@ export default class SideBar extends Component {
           <li><Link to="/freecontent">Free Content</Link></li>
 
           <div className={this.state.mixes}>
-            <div>
-              <Link to='/mixing/1/intro'>Mixing 1 intro</Link>
-            </div>
-            <div>
-              <Link to='/mixing/1/0'>Mixing 1.0</Link>
-            </div>
-            <div>
-              <Link to='/mixing/1/1'>Mixing 1.1</Link>
-            </div>
-            <div>
-              <Link to='/mixing/1/2'>Mixing 1.2</Link>
-            </div>
+
+            <li onClick={e => this.dropDown(e)}
+              className="dropdown-button">Mixing1</li>
           </div>
-          <li onClick={e => this.dropDown(e)}
-            className="dropdown-button">Mixing</li>
+
+
         </ul>
       </section>
     )
   }
 }
+
+// <div>
+//   <Link to='/mixing/1/intro'>Mixing 1 intro</Link>
+// </div>
+// <div>
+//   <Link to='/mixing/1/0'>Mixing 1.0</Link>
+// </div>
+// <div>
+//   <Link to='/mixing/1/1'>Mixing 1.1</Link>
+// </div>
+// <div>
+//   <Link to='/mixing/1/2'>Mixing 1.2</Link>
+// </div>
+
+// <div className={this.state.mixes}>
+//   <div>
+//     <Link to='/mixing/2/intro'>Mixing 2 Intro</Link>
+//   </div>
+// </div>
+// <li className="dropdown-button">Mixing2</li>

@@ -11,7 +11,8 @@ export default class Home extends Component {
         <SideBar />
         <section className={styles.home} data-tid="container">
           <h2>Home</h2>
-          <Link to="/counter">to Counter</Link>
+          <Link to="/counter">to Counter</Link><br />
+          <Link to ="/input">Create Lesson Plan</Link>
         </section>
       </section>
     );

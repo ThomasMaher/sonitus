@@ -13,15 +13,27 @@
 }
 
 .mixing h1 {
-  font-size: 36px;
+  font-size: 33px;
   text-align: center;
-  color: black;
+  color: blue;
+  text-decoration: underline;
 }
 
 .mixing p {
   font-size: 20px;
-  padding-left: 14px;
+  padding-left: 40px;
+  padding-right: 70px;
   color: black;
+}
+
+.bIt {
+  font-weight: bolder;
+  font-style: italic;
+  text-align: center;
+}
+
+.alignCenter {
+  text-align: center;
 }
 
 .home {

@@ -1,6 +1,6 @@
-import React, { Component } from "react"
-import styles from "./Content.css";
-import SideBar from './SideBar.js';
+import React, { Component } from 'react';
+import styles from '../Content.css';
+import SideBar from '../SideBar.js';
 
 export default class Mixing2 extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class Mixing2 extends Component {
         <SideBar />
 
         <section className={styles.mixing}>
-          <h1>Mixing 1.1</h1>
+          <h1>Mixing 1.2</h1>
 
           <p>Donec eget ex magna. Interdum et malesuada fames ac ante
             ipsum primis in faucibus. Pellentesque venenatis dolor

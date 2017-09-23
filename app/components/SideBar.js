@@ -7,7 +7,8 @@ export default class SideBar extends Component {
     super(props)
     this.dropDown = this.dropDown.bind(this);
     this.state = {
-      mixes: styles.mixesUp
+      mixes: styles.mixesUp,
+      lessons: this.props.lessons
     }
   }
 
@@ -25,30 +26,40 @@ export default class SideBar extends Component {
           <li><Link to="/freecontent">Free Content</Link></li>
 
           <div className={this.state.mixes}>
-
-            <li onClick={e => this.dropDown(e)}
-              className="dropdown-button">Mixing1</li>
+            <div>
+              <Link to='/mixing/1/intro'>Mixing 1 intro</Link>
+            </div>
+            <div>
+              <Link to='/mixing/1/0'>Mixing 1.0</Link>
+            </div>
+            <div>
+              <Link to='/mixing/1/1'>Mixing 1.1</Link>
+            </div>
+            <div>
+              <Link to='/mixing/1/2'>Mixing 1.2</Link>
+            </div>
           </div>
 
+          <li onClick={e => this.dropDown(e)}
+            className="dropdown-button">Mixing1</li>
 
         </ul>
       </section>
     )
   }
+  // 
+  // Lessons({
+  //   class: {
+  //     name: "Mixing 1",
+  //     lessons: {
+  //       name: "Mixing 1 Intro",
+  //     }
+  //   }
+  // })
+
 }
 
-// <div>
-//   <Link to='/mixing/1/intro'>Mixing 1 intro</Link>
-// </div>
-// <div>
-//   <Link to='/mixing/1/0'>Mixing 1.0</Link>
-// </div>
-// <div>
-//   <Link to='/mixing/1/1'>Mixing 1.1</Link>
-// </div>
-// <div>
-//   <Link to='/mixing/1/2'>Mixing 1.2</Link>
-// </div>
+
 
 // <div className={this.state.mixes}>
 //   <div>

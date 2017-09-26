@@ -25,7 +25,7 @@ export default class Input extends Component {
     let current = this.state.classes;
     current[this.state.addClass] = [];
     this.state.addClass = "";
-    
+
     this.setState({classes: current});
   }
 
@@ -69,7 +69,9 @@ export default class Input extends Component {
                         {thisClass}
                       </li>);
         for (let j = 1; j < lessons.length; j++) {
-          subjects.push(<li className={styles.lessonTitle} key={lessons[j]+thisClass+j}>
+          let key = thisClass+i+j;
+          subjects.push(<li className={styles.lessonTitle} key={key}>
+                          <Link to="/input/${key}">edit</Link>
                           {lessons[j]}
                         </li>);
         }

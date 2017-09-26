@@ -21,6 +21,11 @@ h1 {
   color: blue;
 }
 
+.courseContents a {
+  color: blue;
+  padding-right: 10px;
+}
+
 .classTitle {
   color: blue;
   margin-top: 22px;

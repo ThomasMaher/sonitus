@@ -16,9 +16,15 @@
 .inputSection {
   display: flex;
   justify-content: center;
-  width: 100%
+  width: 100%;
+  height: 400px;
 }
 
 .inputField {
   overflow: scroll;
+}
+
+.quillContainer {
+  margin-top: 40px;
+  width: 700px;
 }

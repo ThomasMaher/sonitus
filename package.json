@@ -75,9 +75,9 @@
     "private-repo": "git+ssh://git@github.com:ricardomasters/sonitus.git"
   },
   "author": {
-      "name": "Ricardo Gutierrez",
-      "license": "LicenseRef-LICENSE",
-      "private": true
+    "name": "Ricardo Gutierrez",
+    "license": "LicenseRef-LICENSE",
+    "private": true
   },
   "jest": {
     "moduleNameMapper": {

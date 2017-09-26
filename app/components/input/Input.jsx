@@ -1,42 +1,85 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Input.css';
+// The names of classes entered by a user must be unique. This should be handled at a db level.
 
 export default class Input extends Component {
   constructor() {
     super();
     this.state = {
       classes: {
-        name: "Mixing",
-        lesson: "lessons 1"
+        Mixing1: ["",
+          "lesson1", "lesson2"
+        ],
+        Mixing2: ["",
+          "lessons 1", "lesson2"],
       },
+      addClass: "",
+      addLesson: "",
     }
   }
 
   addClass(e) {
-    e.preventDefault;
+    e.preventDefault();
 
     let current = this.state.classes;
-    let keys = Object.keys(this.state.classes);
-    let next = keys.sort()[keys.length - 1] + 1;
-    current[next] = e.target.value;
+    current[this.state.addClass] = [];
 
     this.setState({classes: current});
   }
 
-  render() {
-    let lessons;
-    let contents = [];
-    // let classes = Object.keys(this.state.classes);
+  addLesson(e, thisClass) {
+    e.preventDefault();
 
-    debugger;
-    if (Object.keys(this.state.classes).length > 0) {
-      let contents = this.state.classes.forEach( subject => {
-        contents.push(<li>
-          {subject.name}
-        </li>);
-      })
+    let current = this.state.classes;
+    let changeClass = this.state.classes[thisClass];
+    let val = changeClass[0]
+    changeClass.push(val);
+    current[thisClass] = changeClass;
+
+    this.setState({classes: current});
+  }
+
+  updateAddLesson(e, thisClass) {
+    e.preventDefault();
+
+    let val = this.state.classes[thisClass][0];
+    this.setState({addLesson: val});
+  }
+
+  updateAddClass(e) {
+    e.preventDefault();
+
+    let val = e.target.value;
+    this.setState({addClass: val});
+  }
+
+  render() {
+    let classes = Object.keys(this.state.classes)
+    let subjects = [];
+
+    if (classes.length > 0) {
+      for (let i = 0; i < classes.length; i++) {
+        let thisClass = classes[i];
+        let lessons = this.state.classes[thisClass];
+        subjects.push(<li className={styles.classTitle} key={thisClass}>
+                        {thisClass}
+                      </li>);
+        for (let j = 0; j < lessons.length; j++) {
+          subjects.push(<li className={styles.lessonTitle} key={lessons[j]+thisClass+j}>
+                          {lessons[j]}
+                        </li>);
+        }
+        subjects.push(<form className={styles.addLesson}
+                      onSubmit={e => this.addLesson(e, thisClass)}>
+                        <input type="text" value={this.state.classes[thisClass][0]}
+                          placeholder="Add a lesson"
+                          onChange={e => this.updateAddLesson(e, thisClass)}></input>
+                        <input type="submit" value="Add"></input>
+                      </form>)
+      }
     }
+
     return (
       <section className={styles.container}>
         <div className={styles.backButton}>
@@ -44,12 +87,17 @@ export default class Input extends Component {
             <i className="fa fa-arrow-left fa-3x" />
           </Link>
         </div>
-        <form onSubmit={e => this.addClass(e)}>
-          <input className="add-class-name-input">
-          </input>
-        </form>
-        <ul>
-          {contents}
+
+        <ul className={styles.courseContents}>
+          {subjects}
+          <li className={styles.addSubject}>
+            <form onSubmit={e => this.addClass(e)}>
+              <input type="text" value={this.state.addClass}
+                placeholder="Add a class"
+                onChange={e => this.updateAddClass(e)}></input>
+              <input type="submit" value="Add"></input>
+            </form>
+          </li>
         </ul>
       </section>
     )

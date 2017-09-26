@@ -2,8 +2,8 @@
   background-color: white;
   height: 100%;
   width: 100%;
-  position: relative;
-  top: 120px;
+  position: absolute;
+  overflow: scroll;
 }
 
 h1 {
@@ -11,6 +11,35 @@ h1 {
 }
 
 .backButton {
-  position: absolute;
-  top: 27px;
+  position: relative;
+  background-color: orange;
+  height: 60px;
+  width: 100%;
+}
+
+.courseContents li {
+  color: blue;
+}
+
+.classTitle {
+  color: blue;
+  margin-top: 22px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  padding-left: 30px;
+}
+
+.lessonTitle {
+  color: blue;
+  list-style: none;
+  margin-bottom: 13px;
+  padding-left: 50px;
+}
+
+.addLesson {
+  padding-left: 75px;
+}
+
+.addSubject {
+  padding-top: 30px;
 }

@@ -24,7 +24,8 @@ export default class Input extends Component {
 
     let current = this.state.classes;
     current[this.state.addClass] = [];
-
+    this.state.addClass = "";
+    
     this.setState({classes: current});
   }
 
@@ -33,7 +34,8 @@ export default class Input extends Component {
 
     let current = this.state.classes;
     let changeClass = this.state.classes[thisClass];
-    let val = changeClass[0]
+    let val = changeClass[0];
+    changeClass[0] = "";
     changeClass.push(val);
     current[thisClass] = changeClass;
 
@@ -41,10 +43,11 @@ export default class Input extends Component {
   }
 
   updateAddLesson(e, thisClass) {
-    e.preventDefault();
-
-    let val = this.state.classes[thisClass][0];
-    this.setState({addLesson: val});
+    // return e => this.setState({question: e.target.value });
+    let current = this.state.classes
+    current[thisClass][0] = e.target.value;
+    // return e => this.setState({})
+    this.setState({class: current});
   }
 
   updateAddClass(e) {
@@ -65,7 +68,7 @@ export default class Input extends Component {
         subjects.push(<li className={styles.classTitle} key={thisClass}>
                         {thisClass}
                       </li>);
-        for (let j = 0; j < lessons.length; j++) {
+        for (let j = 1; j < lessons.length; j++) {
           subjects.push(<li className={styles.lessonTitle} key={lessons[j]+thisClass+j}>
                           {lessons[j]}
                         </li>);

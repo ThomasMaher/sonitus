@@ -17,7 +17,7 @@ export default () => (
       <Route path="/mixing/2" component={Mixing2Page} />
       <Route path="/freecontent" component={FreeContentPage} />
       <Route path="/counter" component={CounterPage} />
-      <Route path="/input" component={InputPage} />
+      <Route path="/input" component={InputPage} thisClass="class"/>
       <Route path="/" component={HomePage} />
     </Switch>
   </App>

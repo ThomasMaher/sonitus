@@ -20,6 +20,10 @@ export default class Create extends Component {
     }
     this.handleChange = this.handleChange.bind(this);
   }
+  componentDidMount() {
+    let content = this.props.content;
+    this.setState({value: content});
+  }
 
   handleChange(value) {
     this.setState({value});
@@ -33,6 +37,8 @@ export default class Create extends Component {
   }
 
   render() {
+    let test = this.state.value;
+    console.log(test);
     return(
       <section className={styles.container}>
         <div className={styles.backButton}>
@@ -45,7 +51,7 @@ export default class Create extends Component {
           <ReactQuill value={this.state.value}
             onChange={this.handleChange}
             className={styles.quillContainer}/>
-          <button onCliick={e => this.saveContent(e)}>Save Content</button>
+          <button onClick={e => this.saveContent(e)}>Save Content</button>
         </div>
       </section>
     )

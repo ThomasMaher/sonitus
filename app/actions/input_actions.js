@@ -1,7 +1,8 @@
 
 
 export const CREATE_CONTENT = "CREATE_CONTENT";
-export const RETRIEVE_CONTENT = "RETRIEVE_CONTENT";
+export const RETRIEVE_LESSON_PLAN = "RETRIEVE_LESSON_PLAN";
+export const RETRIEVE_LESSON = "RETRIEVE_LESSON";
 
 export function createContent(content) {
   return {
@@ -10,6 +11,14 @@ export function createContent(content) {
   }
 }
 
-export function retrieveContent() {
-  return {type: RETRIEVE_CONTENT}
+export function retrieveLessonPlan() {
+  return {type: RETRIEVE_LESSON_PLAN}
+}
+
+export function retrieveLesson(data) {
+  debugger;
+  return {
+    type: RETRIEVE_LESSON,
+    data: data
+  }
 }

@@ -43,10 +43,9 @@ export default class Input extends Component {
   }
 
   updateAddLesson(e, thisClass) {
-    // return e => this.setState({question: e.target.value });
     let current = this.state.classes
     current[thisClass][0] = e.target.value;
-    // return e => this.setState({})
+
     this.setState({class: current});
   }
 
@@ -55,6 +54,13 @@ export default class Input extends Component {
 
     let val = e.target.value;
     this.setState({addClass: val});
+  }
+
+  getLesson(e) {
+    const thisClass = e.target.id.split(",")[0];
+    const lesson = e.target.id.split(",")[1];
+    debugger;
+    this.props.dispatch.getLesson({thisClass, lesson})
   }
 
   render() {
@@ -70,8 +76,13 @@ export default class Input extends Component {
                       </li>);
         for (let j = 1; j < lessons.length; j++) {
           let key = thisClass+i+j;
+
           subjects.push(<li className={styles.lessonTitle} key={key}>
-                          <Link to="/input/${key}">edit</Link>
+                          <Link to={`/input/${key}`}
+                                onClick={e => this.getLesson(e)}
+                                id={[thisClass, lessons[j]]}>
+                                edit
+                          </Link>
                           {lessons[j]}
                         </li>);
         }

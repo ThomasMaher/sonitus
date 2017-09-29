@@ -7,13 +7,21 @@ import * as ContentActions from '../actions/input_actions';
 class InputPage extends Component {
   render() {
     let content;
+    let thisClass;
+    let thisLesson;
+
+    const dispatch = {
+      saveContent: this.props.saveContent,
+      getLesson: this.props.getLesson,
+    };
 
     switch (this.props.location.pathname) {
       case "/input":
-        content = <Input />;
+        content = <Input props={this.props} dispatch={dispatch}/>;
         break;
       default:
-        content = <CreateContent loc={this.props.location.pathname} />;
+        content = <CreateContent content={this.props.content}
+        dispatch={dispatch}    />;
     }
     return (
       content
@@ -29,7 +37,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    saveContent: ContentActions.createContent,
+    saveContent: () => dispatch(ContentActions.createContent),
+    getLesson: (data) => dispatch(ContentActions.retrieveLesson(data)),
   }
 }
 

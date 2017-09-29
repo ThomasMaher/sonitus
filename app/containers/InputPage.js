@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Input from '../components/input/Input';
 import CreateContent from '../components/input/Create.jsx';
+import * as ContentActions from '../actions/input_actions';
 
-export default class InputPage extends Component {
+class InputPage extends Component {
   render() {
     let content;
 
@@ -11,10 +13,24 @@ export default class InputPage extends Component {
         content = <Input />;
         break;
       default:
-        content = <CreateContent props={this.props.location.pathname} />;
+        content = <CreateContent loc={this.props.location.pathname} />;
     }
     return (
       content
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    content: state.content,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    saveContent: ContentActions.createContent,
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(InputPage);

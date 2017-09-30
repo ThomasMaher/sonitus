@@ -19,6 +19,11 @@ export default class Input extends Component {
     }
   }
 
+  componentDidMount() {
+    let classes = this.props.get.lessonPlan;
+    this.setState({classes});
+  }
+
   addClass(e) {
     e.preventDefault();
 
@@ -59,7 +64,6 @@ export default class Input extends Component {
   getLesson(e) {
     const thisClass = e.target.id.split(",")[0];
     const lesson = e.target.id.split(",")[1];
-    debugger;
     this.props.dispatch.getLesson({thisClass, lesson})
   }
 

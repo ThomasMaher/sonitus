@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Input from '../components/input/Input';
 import CreateContent from '../components/input/Create.jsx';
 import * as ContentActions from '../actions/input_actions';
+import { selectLessonPlan } from '../reducers/selectors';
 
 class InputPage extends Component {
   render() {
@@ -13,15 +14,20 @@ class InputPage extends Component {
     const dispatch = {
       saveContent: this.props.saveContent,
       getLesson: this.props.getLesson,
+      selectLessonPlan: this.props.selectLessonPlan,
     };
+
+    const get = {
+      content: this.props.content,
+      lessonPlan: this.props.selectLessonPlan,
+    }
 
     switch (this.props.location.pathname) {
       case "/input":
-        content = <Input props={this.props} dispatch={dispatch}/>;
+        content = <Input get={get} dispatch={dispatch}/>;
         break;
       default:
-        content = <CreateContent content={this.props.content}
-        dispatch={dispatch}    />;
+        content = <CreateContent get={get} dispatch={dispatch}/>;
     }
     return (
       content
@@ -32,6 +38,7 @@ class InputPage extends Component {
 function mapStateToProps(state) {
   return {
     content: state.content,
+    selectLessonPlan: selectLessonPlan(state),
   }
 }
 

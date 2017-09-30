@@ -16,7 +16,6 @@ export function retrieveLessonPlan() {
 }
 
 export function retrieveLesson(data) {
-  debugger;
   return {
     type: RETRIEVE_LESSON,
     data: data

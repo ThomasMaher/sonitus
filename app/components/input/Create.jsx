@@ -9,6 +9,9 @@ import styles from './Create.css';
 //     noLesson1: "no content",
 //     noLesson2: "no content2",
 //   },
+    // class1: {
+    //   lesson1: "content",
+    // }
 // };
 // Remember to ADD each lesson to the above content structure rather than saving each lesson on it's own thereby replacing the existing content.
 
@@ -17,12 +20,23 @@ export default class Create extends Component {
     super(props);
     this.state = {
       value: "",
+      thisClass: "",
+      thisLesson: "",
     }
     this.handleChange = this.handleChange.bind(this);
   }
   componentDidMount() {
-    let content = this.props.content;
-    this.setState({value: content});
+    let content = this.props.get.content;
+    let getCurrentContent = content['currentClass'];
+    let currentContent = content[getCurrentContent[0]][getCurrentContent[1]];
+    this.setState({
+      value: currentContent,
+      thisClass: getCurrentContent[0],
+      thisLesson: getCurrentContent[1],
+    });
+  }
+
+  componentDidUpdate() {
   }
 
   handleChange(value) {
@@ -33,12 +47,17 @@ export default class Create extends Component {
   saveContent(e) {
     e.preventDefault();
     // content could be sent to a database here
-
+    let content = {
+      thisClass: this.thisClass,
+      thisLesson: this.thisLesson,
+      value: this.value,
+    }
+    this.props.dispatch.saveContent(content);
   }
 
   render() {
     let test = this.state.value;
-    console.log(test);
+
     return(
       <section className={styles.container}>
         <div className={styles.backButton}>
@@ -51,8 +70,9 @@ export default class Create extends Component {
           <ReactQuill value={this.state.value}
             onChange={this.handleChange}
             className={styles.quillContainer}/>
-          <button onClick={e => this.saveContent(e)}>Save Content</button>
         </div>
+        <br />
+          <button onClick={e => this.saveContent(e)}>Save Content</button>
       </section>
     )
   }

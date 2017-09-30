@@ -1,10 +1,12 @@
 import { RETRIEVE_LESSON_PLAN, RETRIEVE_LESSON, CREATE_CONTENT } from '../actions/input_actions.js';
 
 let defaultState = {
-  noClass: {
-    noLesson1: "no content",
-    noLesson2: "no content2",
-  },
+  currentClass: [
+    "testClass", "lesson1"
+  ],
+  testClass: {
+    lesson1: "Add content here",
+  }
 };
 
 
@@ -17,16 +19,18 @@ export default function content(state = defaultState, action) {
       return currentState;
       break;
     case RETRIEVE_LESSON:
-      debugger;
-      if (currentState.hasOwnProperty(action.data.thisClass)) {
-        if (currentState.hasOwnProperty(action.data.lesson)) {
-          return currentState[action.data[thisClass][lesson]];
-        } else { return "Class not found"}
-      } else { return "Class not found"}
+      currentState['currentClass'] = [
+        action.data.thisClass, action.data.lesson,
+      ];
+      return currentState;
       break;
     case CREATE_CONTENT:
-      currentClass = action.data.class;
-      currentState[currentClass] = action.data.content;
+      let data = actions.data;
+      let currentClass = data.thisClass;
+      let currentLesson = data.thisLesson;
+      currentState[currentClass] = {
+        currentLesson: data.value
+      };
       return currentState;
       break;
     default:

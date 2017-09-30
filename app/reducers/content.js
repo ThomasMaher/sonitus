@@ -25,7 +25,7 @@ export default function content(state = defaultState, action) {
       return currentState;
       break;
     case CREATE_CONTENT:
-      let data = actions.data;
+      let data = action.data;
       let currentClass = data.thisClass;
       let currentLesson = data.thisLesson;
       currentState[currentClass] = {

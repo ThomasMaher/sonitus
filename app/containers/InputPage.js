@@ -44,7 +44,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    saveContent: () => dispatch(ContentActions.createContent),
+    saveContent: (content) => dispatch(ContentActions.createContent(content)),
     getLesson: (data) => dispatch(ContentActions.retrieveLesson(data)),
   }
 }

@@ -3,16 +3,13 @@ export const selectLessonPlan = ({ content }) => {
   let result = {};
 
   classes.forEach(thisClass => {
-    let lessons = [];
+    let lessons = [""];
 
     if (thisClass === "currentClass") {
       return;
     } else {
       let theseLessons = content[thisClass]
-      let eachLesson = Object.keys(theseLessons)
-      eachLesson.forEach(lesson => {
-        lessons.push(theseLessons[lesson]);
-      })
+      lessons.push(Object.keys(theseLessons));
       result[thisClass] = lessons;
     }
   })

@@ -48,9 +48,9 @@ export default class Create extends Component {
     e.preventDefault();
     // content could be sent to a database here
     let content = {
-      thisClass: this.thisClass,
-      thisLesson: this.thisLesson,
-      value: this.value,
+      thisClass: this.state.thisClass,
+      thisLesson: this.state.thisLesson,
+      value: this.state.value,
     }
     this.props.dispatch.saveContent(content);
   }

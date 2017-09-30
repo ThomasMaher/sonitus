@@ -29,9 +29,14 @@ export default class Input extends Component {
 
     let current = this.state.classes;
     current[this.state.addClass] = [];
-    this.state.addClass = "";
 
     this.setState({classes: current});
+
+    let content = this.props.get.content;
+    content[this.state.addClass] = {};
+    // this.props.dispatch.saveContent
+
+    this.state.addClass = "";
   }
 
   addLesson(e, thisClass) {
@@ -45,6 +50,9 @@ export default class Input extends Component {
     current[thisClass] = changeClass;
 
     this.setState({classes: current});
+
+    let content = this.props.get.content;
+    // content[]
   }
 
   updateAddLesson(e, thisClass) {
@@ -108,6 +116,7 @@ export default class Input extends Component {
           </Link>
         </div>
 
+        <h1 className={styles.title}>Lesson Plan</h1>
         <ul className={styles.courseContents}>
           {subjects}
           <li className={styles.addSubject}>

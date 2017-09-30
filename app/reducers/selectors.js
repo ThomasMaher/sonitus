@@ -9,7 +9,7 @@ export const selectLessonPlan = ({ content }) => {
       return;
     } else {
       let theseLessons = content[thisClass]
-      lessons.push(Object.keys(theseLessons));
+      lessons = lessons.concat(Object.keys(theseLessons));
       result[thisClass] = lessons;
     }
   })

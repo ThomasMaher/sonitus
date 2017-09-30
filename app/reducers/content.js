@@ -27,10 +27,8 @@ export default function content(state = defaultState, action) {
     case CREATE_CONTENT:
       let data = action.data;
       let currentClass = data.thisClass;
-      let currentLesson = data.thisLesson;
-      currentState[currentClass] = {
-        currentLesson: data.value
-      };
+      currentState[currentClass] = data.values;
+
       return currentState;
       break;
     default:

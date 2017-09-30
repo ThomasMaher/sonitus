@@ -72,9 +72,18 @@ export default class Input extends Component {
   getLesson(e) {
     const thisClass = e.target.id.split(",")[0];
     const lesson = e.target.id.split(",")[1];
+
     this.props.dispatch.getLesson({thisClass, lesson})
   }
-
+  // = {
+  //   noClass: {
+  //     noLesson1: "no content",
+  //     noLesson2: "no content2",
+  //   },
+    // class1: {
+    //   lesson1: "content",
+    // }
+  // }
   render() {
     let classes = Object.keys(this.state.classes)
     let subjects = [];

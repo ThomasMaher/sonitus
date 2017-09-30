@@ -9,9 +9,9 @@ import styles from './Create.css';
 //     noLesson1: "no content",
 //     noLesson2: "no content2",
 //   },
-    // class1: {
-    //   lesson1: "content",
-    // }
+  // class1: {
+  //   lesson1: "content",
+  // }
 // };
 // Remember to ADD each lesson to the above content structure rather than saving each lesson on it's own thereby replacing the existing content.
 
@@ -24,9 +24,11 @@ export default class Create extends Component {
       thisLesson: "",
     }
     this.handleChange = this.handleChange.bind(this);
+    this.saveContent = this.saveContent.bind(this);
   }
   componentDidMount() {
     let content = this.props.get.content;
+    
     let getCurrentContent = content['currentClass'];
     let currentContent = content[getCurrentContent[0]][getCurrentContent[1]];
     this.setState({
@@ -46,12 +48,16 @@ export default class Create extends Component {
 
   saveContent(e) {
     e.preventDefault();
+    let lesson = this.state.thisLesson;
     // content could be sent to a database here
+    let values = this.props.get.content[this.state.thisClass];
+    values[lesson] = this.state.value;
+
     let content = {
       thisClass: this.state.thisClass,
-      thisLesson: this.state.thisLesson,
-      value: this.state.value,
+      values: values,
     }
+
     this.props.dispatch.saveContent(content);
   }
 
@@ -77,11 +83,3 @@ export default class Create extends Component {
     )
   }
 }
-
-
-  // <form>
-  //   <textarea rows="30" cols="115"
-  //     className={styles.inputField}></textarea>
-  //   <br />
-  //   <input type="submit" value="Save Content"></input>
-  // </form>
